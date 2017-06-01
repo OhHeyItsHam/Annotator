@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+		
+		<title>Raven Annotation</title>
+	
+		<meta charset="utf-8">
+        <script src="lib/vendor/jquery.js"></script>
+		<script src="lib/vendor/json2.js"></script>
+		<script src="pkg/annotator.min.js"></script>
+		<script src="pkg/annotator.store.min.js"></script>
+		<script src="pkg/annotator.auth.min.js"></script>
+		<script src="pkg/annotator.permissions.min.js"></script>
+		<script src="pkg/annotator.tags.min.js"></script>
+		<script src="lib/vendor/showdown.js"></script>
+    <script src="pkg/annotator.markdown.min.js"></script>
+		<link rel="stylesheet" type="text/css" href="pkg/annotator.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Cormorant+SC" rel="stylesheet"> 
+    </head>
+    <body>
+		<h1>Simple Annotator.JS example</h1>
+		<div id="paragraph">
+			<p id="sub">Highlight a piece of this text to add an annotation to it</p> 
+			<p>Once upon a midnight dreary, while I pondered, weak and weary, 
+Over many a quaint and curious volume of forgotten lore 
+    While I nodded, nearly napping, suddenly there came a tapping, 
+As of some one gently rapping, rapping at my chamber door. 
+“’Tis some visitor,” I muttered, “tapping at my chamber door 
+            Only this and nothing more.”</p> 
+
+    		<p>Ah, distinctly I remember it was in the bleak December; 
+And each separate dying ember wrought its ghost upon the floor. 
+    Eagerly I wished the morrow;vainly I had sought to borrow 
+    From my books surcease of sorrow sorrow for the lost Lenore 
+For the rare and radiant maiden whom the angels name Lenore  Nameless here for evermore.</p> 
+
+    		<p>And the silken, sad, uncertain rustling of each purple curtain 
+Thrilled me—filled me with fantastic terrors never felt before; 
+    So that now, to still the beating of my heart, I stood repeating 
+    “’Tis some visitor entreating entrance at my chamber door
+Some late visitor entreating entrance at my chamber door;
+            This it is and nothing more.” 
+			</p>
+		</div>
+		
+		<style>
+			p {
+				text-align: center;
+				padding-left:40%;
+				padding-right:40%;
+			}
+			body {
+				font-family:Cormorant SC;
+			}
+			h1 {
+				text-decoration:underline;
+				text-align: center;
+			}
+			#sub {
+				text-decoration:underline;
+			}
+		</style>
+		
+        <script>
+                jQuery(function ($) {
+					$('#paragraph').annotator()
+								   .annotator('addPlugin', 'Permissions')
+								   .annotator('addPlugin', 'Markdown')
+								   .annotator('addPlugin', 'Tags');
+				});
+        </script>
+		
+    </body>
+    
+    
+</html>
